@@ -45,7 +45,7 @@ import logging
 
 from datafun_toolkit.logger import get_logger, log_header
 
-from nlp.config_sailors import (
+from nlp.config_sailorsp5 import (
     HTTP_REQUEST_HEADERS,
     PAGE_URL,
     PROCESSED_CSV_PATH,
@@ -54,9 +54,9 @@ from nlp.config_sailors import (
     RAW_PATH,
 )
 from nlp.stage01_extract import run_extract
-from nlp.stage02_validate_sailors import run_validate
-from nlp.stage03_transform_sailors import run_transform
-from nlp.stage04_analyze_sailors import run_analyze
+from nlp.stage02_validate_sailorsp5 import run_validate
+from nlp.stage03_transform_sailorsp5 import run_transform
+from nlp.stage04_analyze_sailorsp5 import run_analyze
 from nlp.stage05_load import run_load
 
 # ============================================================
