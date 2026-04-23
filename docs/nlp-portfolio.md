@@ -5,4 +5,72 @@ This portfolio summarizes my work in Web Mining & Applied Natural Language Proce
 
 ## 1. NLP Techniques Implemented
 I implemented the following NLP techniques across my projects, with concrete evidence in code and outputs:
--
+- Tokenization
+  - Converts raw text into smaller units that can be analyzed computationally
+  - One of the first steps in every project
+  - Examples:
+    - Text preprocessing notebook: [text_preprocessing_sailors.ipynb] (https://github.com/sydsailors/nlp-02-text-preprocessing/blob/main/notebooks/text_preprocessing_sailors.ipynb)
+    - Text exploration notebook: [nlp_corpus_explore_sailors_phase_5.ipynb] (https://github.com/sydsailors/nlp-03-text-exploration/blob/main/notebooks/nlp_corpus_explore_sailors_phase_5.ipynb)
+- Frequency analysis
+  - Frequency distribution shows how often each token appears to identify which words are most common in a dataset
+  - Examples:
+    - Text exploration notebook: [nlp_corpus_explore_sailors_phase_5.ipynb] (https://github.com/sydsailors/nlp-03-text-exploration/blob/main/notebooks/nlp_corpus_explore_sailors_phase_5.ipynb)
+    - Pipeline wordcloud: [sailorsp5_wordcloud.png] (https://github.com/sydsailors/nlp-06-pipeline/blob/main/data/processed/sailorsp5_wordcloud.png)
+    - Pipeline top tokens: [sailorsp5_top_tokens.png] (https://github.com/sydsailors/nlp-06-pipeline/blob/main/data/processed/sailorsp5_top_tokens.png)
+- Text cleaning and normalization
+  - Text preprocessing prepares raw text for analysis by cleaning and standardizing it
+  - Common steps include tokenizing, removing punctuation, removing stop words, and converting text to lowercase
+  - Examples:
+    - Text preprocessing notebook: [text_preprocessing_sailors.ipynb] (https://github.com/sydsailors/nlp-02-text-preprocessing/blob/main/notebooks/text_preprocessing_sailors.ipynb)
+    - Text exploration notebook: [nlp_corpus_explore_sailors_phase_5.ipynb] (https://github.com/sydsailors/nlp-03-text-exploration/blob/main/notebooks/nlp_corpus_explore_sailors_phase_5.ipynb)
+- API-based text analysis (and JSON)
+  - JSON:
+    - When working with JSON data, you must inspect the structure before extracting fields
+    - JSON arrays are represented as Python lists
+    - JSON objects are represented as Python dictionaries
+  - Example:
+    - API text data pipeline: [pipeline_api_json.py] (https://github.com/sydsailors/nlp-04-api-text-data/blob/main/src/nlp/pipeline_api_json.py)
+- Web scraping / content extraction from HTML
+  - Extracting text from HTML using BeautifulSoup
+  - Examples:
+    - Web documents [pipeline_web_html.py] (https://github.com/sydsailors/nlp-05-web-documents/blob/main/src/nlp/pipeline_web_html.py)
+- Sentiment analysis
+  - spaCy was used for tokenization, stopword removal, and preprocessing
+  - Example:
+    - Transform stage [stage03_transform_sailorsp5.py] (https://github.com/sydsailors/nlp-06-pipeline/blob/main/src/nlp/stage03_transform_sailorsp5.py)
+
+## 2. Systems and Data Sources
+I analyzed text from multiple real-world sources, each with different structures and challenges:
+- HTML Web Pages
+  - Semi-structured content with inconsistent tags and nested elements
+  - Required selective extraction (<h1>, <div>, <blockquote>)
+- JSON APIs
+  - Structured but variable schemas across records
+  - Validation was an important step
+- Plain text
+  - Cleaner inputs but required normalization and token handling
+- To handle messy or inconsistent data, I checked for missing or empty fields during validation, logged extraction errors instead of failing pipelines, and normalized text before analysis to ensure comparability.
+
+## 3. Pipeline Structure (EVTL)
+Each project follows a clear EVTL pipeline pattern:
+- Extract
+  - Collects text from web pages or APIs
+  - Example:
+    - [stage01_extract.py] (https://github.com/sydsailors/nlp-06-pipeline/blob/main/src/nlp/stage01_extract.py)
+- Validate
+  - Confirms required fields exist
+  - Log record counts and skipped invalid entries
+  - Example:
+    - [stage02_validate_sailorsp5.py] (https://github.com/sydsailors/nlp-06-pipeline/blob/main/src/nlp/stage02_validate_sailorsp5.py)
+- Transform
+  - Clean and normalize text
+  - Tokenize words and sentences
+  - Example:
+    - [stage03_transform_sailorsp5.py] (https://github.com/sydsailors/nlp-06-pipeline/blob/main/src/nlp/stage03_transform_sailorsp5.py)
+- Load
+  - Store results in Pandas DataFrames
+  - Generate logs, summaries, and visualizations
+  - Example:
+    - [stage04_analyze_sailorsp5.py] (https://github.com/sydsailors/nlp-06-pipeline/blob/main/src/nlp/stage04_analyze_sailorsp5.py)
+
+## 4. Signals and Analysis Methods
