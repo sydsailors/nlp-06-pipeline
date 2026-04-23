@@ -42,6 +42,7 @@ Run from root project folder with:
 # ============================================================
 
 import logging
+from pathlib import Path
 
 from datafun_toolkit.logger import get_logger, log_header
 
@@ -64,11 +65,22 @@ from nlp.stage05_load import run_load
 # ============================================================
 
 LOG: logging.Logger = get_logger("CI", level="DEBUG")
-
+# Define standard project paths (required for logging)
+ROOT_PATH = Path().resolve()
+DATA_PATH = ROOT_PATH / "data"
 
 # ============================================================
 # Section 3. Define Main Pipeline Function
 # ============================================================
+
+
+def log_path(log, label, path):
+    """
+    Log a labeled, resolved filesystem path.
+    Matches expected course helper behavior.
+    """
+    resolved = Path(path).resolve()
+    log.info(f"{label}={resolved}")
 
 
 def main() -> None:
@@ -78,10 +90,10 @@ def main() -> None:
     RAW_PATH.mkdir(parents=True, exist_ok=True)
     PROCESSED_PATH.mkdir(parents=True, exist_ok=True)
 
-    # log_path(LOG, "ROOT_PATH", ROOT_PATH)
-    # log_path(LOG, "DATA_PATH", DATA_PATH)
-    # log_path(LOG, "RAW_PATH", RAW_PATH)
-    # log_path(LOG, "PROCESSED_PATH", PROCESSED_PATH)
+    log_path(LOG, "ROOT_PATH", ROOT_PATH)
+    log_path(LOG, "DATA_PATH", DATA_PATH)
+    log_path(LOG, "RAW_PATH", RAW_PATH)
+    log_path(LOG, "PROCESSED_PATH", PROCESSED_PATH)
 
     # EXTRACT
     html_content = run_extract(
