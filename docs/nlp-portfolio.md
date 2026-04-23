@@ -43,7 +43,7 @@ I implemented the following NLP techniques across my projects, with concrete evi
 I analyzed text from multiple real-world sources, each with different structures and challenges:
 - HTML Web Pages
   - Semi-structured content with inconsistent tags and nested elements
-  - Required selective extraction (<h1>, <div>, <blockquote>)
+  - Required selective extraction
 - JSON APIs
   - Structured but variable schemas across records
   - Validation was an important step
