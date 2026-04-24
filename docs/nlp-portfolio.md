@@ -74,3 +74,36 @@ Each project follows a clear EVTL pipeline pattern:
     - [stage04_analyze_sailorsp5.py](https://github.com/sydsailors/nlp-06-pipeline/blob/main/src/nlp/stage04_analyze_sailorsp5.py)
 
 ## 4. Signals and Analysis Methods
+I computed multiple text signals to support analysis:
+- Word frequency
+  - Ranked unigrams and n-grams to identify dominant themes
+- Context and co-occurrence
+  - Compared frequent tokens across documents and sources
+- Keyword extraction
+  - Identified most frequent terms after stopword removal
+- Metadata signals
+  - Sentence count, word count, author count
+
+## 5. Insights
+My analyses revealed several meaningful patterns:
+- High-frequency tokens consistently reflected topic focus and framing
+- Sentence count and word count helped explain readability differences
+- Sentiment scores often contradicted expectations based on headlines alone
+- Cleaning and normalization significantly altered top-token rankings, demonstrating why preprocessing matters
+These insights reinforced the importance of structured pipelines and validation when working with real-world text.
+
+## 6. Representative Work
+[NLP 5: Web Documents](https://github.com/sydsailors/nlp-05-web-documents)
+- I built a full EVTL pipeline to extract, clean, tokenize, and analyze text from A Project Gutenberg web page, producing paragraph and word counts as well as average words per paragraph.
+
+[NLP 6: Pipeline](https://github.com/sydsailors/nlp-06-pipeline)
+- This custom application is an educational web mining on an abstract about Boston star-black hole binaries. I also added a new derived column for sentence count in the abstract in the Transform stage. Results of analysis were that this abstract was submitted on April 16, 2026 and had a total of 151 words in 7 sentences. Some top tokens include BSBH (Boston star - black hole), BHBH, GW, and BS.
+
+## 7. Skills
+Through these projects, I demonstrated the ability to:
+- Build repeatable NLP pipelines using Python
+- Extract and clean text from messy real-world sources
+- Perform tokenization, frequency analysis, and sentiment analysis
+- Work confidently with HTML, JSON, and plain text
+- Validate data and handle inconsistent inputs safely
+- Communicate technical results clearly using Markdown, logs, and structured outputs
