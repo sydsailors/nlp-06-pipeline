@@ -98,7 +98,7 @@ These insights reinforced the importance of structured pipelines and validation 
 
 [NLP 6: Pipeline](https://github.com/sydsailors/nlp-06-pipeline)
 - This custom application is an educational web mining on an abstract about Boston star-black hole binaries. I also added a new derived column for sentence count in the abstract in the Transform stage. Results of analysis were that this abstract was submitted on April 16, 2026 and had a total of 151 words in 7 sentences. Some top tokens include BSBH (Boston star - black hole), BHBH, GW, and BS.
-![Wordcloud]((https://github.com/sydsailors/nlp-06-pipeline/blob/main/data/processed/sailorsp5_wordcloud.png))
+
 
 ## 7. Skills
 Through these projects, I demonstrated the ability to:
